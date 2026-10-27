@@ -15,13 +15,14 @@ const DEBUG_TIMEOUT = EXPLICIT_TIMEOUT * 30;
 
 exports.config = {
     runner: 'local',
+    cacheDir: 'C:\\Users\\U425521\\wdio-cache',
     specs: ['force-app/test/**/*.spec.js'],
     maxInstances: 1,
     capabilities: [
         {
             maxInstances: 1,
             browserName: 'chrome',
-            browserVersion: '139.0.7258.67',
+            // browserVersion: '139.0.7258.67',
             'goog:chromeOptions': {
                 args: [
                     '--no-sandbox',
@@ -33,7 +34,7 @@ exports.config = {
             },
         },
     ],
-    logLevel: 'debug',
+    logLevel: 'info',
     bail: 0,
     // timeout for all waitFor commands
     waitforTimeout: DEBUG ? DEBUG_TIMEOUT : EXPLICIT_TIMEOUT,
